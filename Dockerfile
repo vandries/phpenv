@@ -27,6 +27,7 @@ RUN \
 
 # Complete ENV
 ENV PATH /home/.phpenv/bin:/home/.phpenv/shims:$PATH
+ENV PHPENV_ROOT /home/.phpenv
 
 # Define working directory
 WORKDIR /data
