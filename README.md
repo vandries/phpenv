@@ -27,3 +27,23 @@ This repository contains **Dockerfile** of [PHPenv](https://github.com/phpenv/ph
 
     docker run -d vandries/phpenv
 
+This version intall raw phpenv. Right way to use it :
+    
+    docker run -i -t vandries/phpend /bin/bash
+    $> phpenv install php-5.x.y
+    $> phpenv global 5.x.y
+    $> phpenv rehash
+
+
+### Usage with specific version
+
+Images with specific version of PHP are now available.
+
+    docker run -d vandries/phpenv:5.x
+
+Supported versions :
+
+- 5.3 : 5.3.29
+- 5.4 : 5.4.32
+- 5.5 : 5.5.16
+- 5.6 : 5.6.0
