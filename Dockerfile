@@ -29,5 +29,11 @@ RUN \
 ENV PATH /home/.phpenv/bin:/home/.phpenv/shims:$PATH
 ENV PHPENV_ROOT /home/.phpenv
 
+# Install PHP 5.5
+RUN \
+  phpenv install php-5.5.16 && \
+  phpenv global 5.5.16 && \
+  phpenv rehash
+
 # Define working directory
 WORKDIR /data
