@@ -8,7 +8,7 @@ MAINTAINER Valentin Andries <valentin.andries@gmail.com>
 # Install utils
 RUN \
   apt-get update && \
-  DEBIAN_FRONTEND=noninteractive apt-get -y install wget curl build-essential autoconf git libreadline-dev
+  DEBIAN_FRONTEND=noninteractive apt-get -y install wget curl build-essential autoconf2.13 git libreadline-dev
 
 # Install PHP deps
 RUN \
@@ -28,6 +28,12 @@ RUN \
 # Complete ENV
 ENV PATH /home/.phpenv/bin:/home/.phpenv/shims:$PATH
 ENV PHPENV_ROOT /home/.phpenv
+
+# Install PHP 5.3
+RUN \
+  phpenv install php-5.3.29 && \
+  phpenv global 5.3.29 && \
+  phpenv rehash
 
 # Define working directory
 WORKDIR /data
