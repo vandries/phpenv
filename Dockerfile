@@ -31,7 +31,3 @@ ENV PHPENV_ROOT /home/.phpenv
 
 # Define working directory
 WORKDIR /data
-
-# Define default command
-CMD ["php", "phpenv"]
-
