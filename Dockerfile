@@ -29,5 +29,11 @@ RUN \
 ENV PATH /home/.phpenv/bin:/home/.phpenv/shims:$PATH
 ENV PHPENV_ROOT /home/.phpenv
 
+# Install PHP 5.4
+RUN \
+  phpenv install php-5.4.32 && \
+  phpenv global 5.4.32 && \
+  phpenv rehash
+
 # Define working directory
 WORKDIR /data
